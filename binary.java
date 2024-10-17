@@ -1,36 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.binary.example1;
+package test;
+import java.util.Scanner;
+import java.util.Arrays;
 
-/**
- *
- * @author ronewa
- */
-public class binary {
-    public static int binarySearch(int arr[], int first, int last, int key){  
-        if (last>=first){  
-            int mid = first + (last - first)/2;  
-            if (arr[mid] == key){  
-            return mid;  
-            }  
-            if (arr[mid] > key){  
-            return binarySearch(arr, first, mid-1, key);//search in left subarray  
-            }else{  
-            return binarySearch(arr, mid+1, last, key);//search in right subarray  
-            }  
-        }  
-        return -1;  
-    }  
-    public static void main(String args[]){  
-        int arr[] = {10,20,30,40,50};  
-        int key = 30;  
-        int last=arr.length-1;  
-        int result = binarySearch(arr,0,last,key);  
-        if (result == -1)  
-            System.out.println("Element is not found!");  
-        else  
-            System.out.println("Element is found at index: "+result);
+
+public class Test {
+
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.print(findProductIndex ());
+        
     }
+    public static int findProductIndex (){
+ Scanner obj = new Scanner(System.in) ;
+ System.out.print("Input product Id: ");
+int productId = obj.nextInt();
+int[] productIDs = {104,105,106,107,101,102,103};
+    return Arrays.binarySearch(productIDs, productId); 
+    }
+    
 }
